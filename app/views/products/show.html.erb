@@ -1,0 +1,42 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>id:</strong>
+  <%= @product.id %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @product.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @product.description %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @product.price %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @product.category %>
+</p>
+
+<p>
+  <strong>Seller:</strong>
+  <%= @product.seller_id %>
+</p>
+
+<%= link_to 'Back', :back %> |
+
+<% if params[:from] == "buy" and @product.seller_id != session[:user_id] %>
+<% word = "buy" %>
+<% else %>
+<% word = "destroy" %>
+<%= link_to 'Edit', edit_product_path(@product) %> |
+<% end %>
+
+<%= link_to word, product_path(@product, :from =>"show"), method: :delete, data: { confirm: 'Are you sure?' } %>
