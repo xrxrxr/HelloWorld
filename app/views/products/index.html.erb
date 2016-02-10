@@ -1,0 +1,38 @@
+<h1>Showing your for_sale products</h1>
+
+<%= link_to 'New Product', new_product_path %> | 
+
+<%= link_to 'Home', :controller => 'users', :action => 'new' %> | 
+<%= link_to 'Buy products', products_index2_path %>
+
+<table border="2">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Price</th>
+      <th>Category</th>
+      <th>Seller</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @products.each do |product| %>
+      <tr>
+        <td><%= product.title %></td>
+        <td><%= product.description.truncate(30) %></td>
+        <td><%= product.price %></td>
+        <td><%= product.category %></td>
+        <td><%= product.seller_id %></td>
+        <td><%= link_to 'Show', product %></td>
+        <td><%= link_to 'Edit', edit_product_path(product) %></td>
+        <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>

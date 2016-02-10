@@ -1,0 +1,18 @@
+<div>Already have an account? Log in!</div><br>
+<%= form_for( :session, :url => {:controller => 'sessions', :action => 'create', :id => @session}) do |f| %>
+
+	<div class="field">
+	<%= label_tag(:username, "username:") %>
+ 	<%= f.text_field(:username) %>
+	</div>
+
+  <div class="field">
+  <%= label_tag(:password, "password:") %>
+  <%= f.password_field(:password) %>
+  </div>
+
+  <div class="actions">
+  <%= submit_tag("login") %>  
+  </div>
+
+<% end %>

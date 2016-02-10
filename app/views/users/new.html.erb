@@ -1,0 +1,15 @@
+<style type="text/css">
+.alert {font-size: 30px;
+color: red;}
+.forms {display:inline-block;}
+.formsDiv {}</style>
+
+<%if flash[:alert]%>
+<div class = "alert"><%= flash[:alert] %></div>
+<% end %>
+
+<h1>Welcome!</h1>
+<div class = 'formsDiv'>
+	<div class ='forms'><%= render 'form' %></div>
+	<div class ='forms'><%= render 'login' %></div>
+</div>

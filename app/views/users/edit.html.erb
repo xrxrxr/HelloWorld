@@ -1,0 +1,44 @@
+ <p>
+  <strong>First name:</strong>
+  <%= @user.fname %>
+</p>
+<p>
+  <strong>Last name:</strong>
+  <%= @user.lname %>
+</p>
+
+<p>
+  <strong>Username:</strong>
+  <%= @user.username %>
+</p>
+
+
+<div>Change password: </div>
+<%= form_for(@user) do |f| %>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+      <% @user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :new_password %><br>
+    <%= f.password_field :password %>
+  </div>
+  <div>
+    <%= f.label :confirm_new_password %><br>
+    <%= f.password_field :password_confirmation %>
+  </div>
+  <div class="actions">
+    <%= f.submit "change password"%>
+  </div>
+<% end %>
+
+
+<%= link_to 'home', @user %>

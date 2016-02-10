@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<div>
+	<%= link_to 'Sell Items', {:controller => "products", :action => "index"} %> | 
+<%= link_to 'Buy Items', {:controller => "products", :action => "index2"} %> | 
+</div>
+<div>
+<%= link_to 'My Profile', edit_user_path(@user) %> |
+<%= link_to 'Logout', {:controller => "sessions", :action => "destroy"}, method: :delete %>
+
+</div>
+
+<% if @admin %>
+<%= link_to 'show users', users_path %>
+<% end %>
