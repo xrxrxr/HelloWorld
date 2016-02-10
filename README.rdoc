@@ -1,28 +1,11 @@
-== README
++This project was done by me and 3 others for CSE 3901: Web Application Project class Spring 2015 for the Ohio State University. It is a Ebay like "Buy/Sell" site where you can create an account, authenticate login, create objects to "sell" and edit/delete the information, "buy" objects other users have posted, and logout.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+The functionality is there, but is far from bugfree and far from perfect, and really little more than a conceptual overview/prototype giving a visual as to how the functionality of an application like this would work. (There are some very blatant security risks.)
 
-Things you may want to cover:
+This was more a learning experience than a legitimate project, given it was the first time using Rails, and at least this final version is stable (to my knowledge and experience).
 
-* Ruby version
+To run, Download and Unzip the file, and within the document, run "rails s" or "rails server". This starts the server. Then in a web browser, enter "http://localhost:3000" or "http://127.0.0.1:3000" to connect to your computers local address on port 3000 (The default address for Ruby on Rails server). The home page shows up where it prompts you to create an account or login. You can create an account yourself, or use the username "a" and password "a" to access the root account, which can access a page that shows all users. There are a few other dummy accounts and a few objects for "sale" created by those accounts. 
 
-* System dependencies
+Once logged in, the main page has 4 options: (1)a sell page that shows your current for sale items, (2)a buy page that shows all for sale items (that lets you buy/show in further detail if it's someone elses, and edit or destroy if yours), along with a search bar to search for items by category or product name, (3)a your profile page that shows your information, and lets you change your password, and (4)a logout button. Your name and a logout button is also displayed in the top right on every page.
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+FUN FACT: This project was lost on a virtual machine I forgot the password to for almost a full year.
